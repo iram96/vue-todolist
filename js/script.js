@@ -21,7 +21,7 @@ const listCommands = new Vue({
         originalList: [
             {
                 name: 'Andare in banca',
-                done: false
+                done: true
             },
             {
                 name: 'Ritirare la posta',
@@ -55,9 +55,16 @@ const listCommands = new Vue({
             // } else {
             //     return false;
             // }
+        },
+        //funzione per rimuovere oggetto dall'array
+        removeTask(index){
+            
+            this.originalList.splice(index, 1);
+            
 
+        }, 
 
-        }
+        
     } 
 })
 
