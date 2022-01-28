@@ -20,26 +20,44 @@ const listCommands = new Vue({
     data: {
         originalList: [
             {
-                name: 'Latte',
+                name: 'Andare in banca',
                 done: false
             },
             {
-                name: 'Carne',
+                name: 'Ritirare la posta',
                 done: true
             },
             {
-                name: 'Pane',
+                name: 'Comprare il mangime del cane',
                 done: false
             },
             {
-                name: 'Frutta',
+                name: 'Chiamare per il caparra',
                 done: false
             },
             {
-                name: 'Detersivo',
+                name: 'Stendere i panni',
                 done: false
             }
         ]
-    }
+    },
+    methods: {
+        // creo funzione che verifichi com'è done
+        isDone(index){
+            // const flag = this.done;
+            const flag = this.originalList[index].done;
+            console.log(flag)
+            return flag ;
+
+            // console.log(this.done);
+            // if (flag === true){
+            //     return true;
+            // } else {
+            //     return false;
+            // }
+
+
+        }
+    } 
 })
 
