@@ -23,8 +23,8 @@
                 <button class="btn btn-outline-secondary" type="button"  @click="addTask">Aggiungi</button>
             </div>
             <ul v-if='originalList.length' class="list-group" >
-                <li  v-for=' (listItem, index) in originalList ' class="list-group-item w-50 m-auto text-start d-flex justify-content-between">
-                    <span  :class='{ isdone : isDone(index) }' >{{ listItem.name }}</span>
+                <li  v-for=' (listItem, index) in originalList '  class="list-group-item w-50 m-auto text-start d-flex justify-content-between">
+                    <span @click='markAs(index)' :class='{ isdone : isDone(index) }' class='pointer'>{{ listItem.name }}</span>
                     <i @click='removeTask(index)' class="fa-regular fa-circle-xmark delcross" ></i>
                 </li>
                 

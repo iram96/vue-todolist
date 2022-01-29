@@ -78,6 +78,17 @@ const listCommands = new Vue({
             }
             this.newTask = '';
             // resetto newTask per l'utente (fuori da if e alla fine)
+        },
+        markAs(index){
+            
+
+            // if (this.originalList[index].done){
+            //     return this.originalList[index].done = false;
+            // } else {
+            //     return this.originalList[index].done = true;
+            // }
+
+            this.originalList[index].done =  !this.originalList[index].done;
         }
 
 
