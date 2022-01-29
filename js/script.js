@@ -15,9 +15,13 @@ Bonus:
 
 console.log('JS ok');
 
+
+Vue.config.devtools = true;
+
 const listCommands = new Vue({
     el: '#list',
     data: {
+        newTask: '',
         originalList: [
             {
                 name: 'Andare in banca',
@@ -46,7 +50,6 @@ const listCommands = new Vue({
         isDone(index){
             // const flag = this.done;
             const flag = this.originalList[index].done;
-            console.log(flag)
             return flag ;
 
             // console.log(this.done);
@@ -61,10 +64,23 @@ const listCommands = new Vue({
             
             this.originalList.splice(index, 1);
             
+            
 
         }, 
+        //creo funzione che al click di 'Aggiungi' crea un oggetto e lo push in
+        //originalList 
+        addTask(){
+            
+            const newTask = this.newTask.trim(); // trim per controllo spazi
+            if (newTask){
+                this.originalList.push({ name: newTask , done: false });
+                // pusho direttamente l'oggetto nel mio array
+            }
+            this.newTask = '';
+            // resetto newTask per l'utente (fuori da if e alla fine)
+        }
 
-        
+
     } 
 })
 
