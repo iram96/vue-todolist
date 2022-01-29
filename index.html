@@ -19,7 +19,7 @@
             <h1>LISTA DELLA SPESA</h1>
             <hr>
             <div class="input-group mb-3 w-50 m-auto">
-                <input type="text" class="form-control" v-model='newTask'>
+                <input type="text" class="form-control" v-model='newTask' @keyup.enter='addTask'>
                 <button class="btn btn-outline-secondary" type="button"  @click="addTask">Aggiungi</button>
             </div>
             <ul v-if='originalList.length' class="list-group" >
